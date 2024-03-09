@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 1 JavaScript</title>
+    <Style>
+        table{
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td{
+            border: 1px solid black;
+            text-align: center;
+            font-size: 20px;
+        }
+        tfoot{
+            background-color: rgb(224, 224, 224);
+        }
+        h2{
+            text-align: center;
+        }
+        h2,td{
+            font-family: Arial;
+        }
+    </Style>
+</head>
+<body>
+    <h2>Data Pegawai</h2>
+    <hr>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>Nama Pegawai</td>
+                <th>Jabatan</td>
+                <th>Status</td>
+                <th>Gaji Pokok</td>
+                <th>Tunjangan jabatan</td>
+                <th>BPJS</td>
+                <th>Tunjangan Keluarga</td>
+                <th>Total Gaji</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="nama"></td>
+                <td id="jabatan"></td>
+                <td id="status"></td>
+                <td id="gapok"></td>
+                <td id="tunjab"></td>
+                <td id="bpjs"></td>
+                <td id="tunkel"></td>
+                <td id="total"></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="7"> Total gaji </td>
+                <td id="total_foot"></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script>
+        let nama = "Ridwan";
+        let jabatan = "Manager";
+        let status = "Menikah";
+
+        if(jabatan=="Manager"){
+            gapok = 15000000;
+        } else if(jabatan=="Asisten Manager"){
+            gapok =10000000;
+        } else if(jabatan=="Staff"){
+            gapok = 5000000;
+        } else{
+            gapok = 0;
+        }
+
+        let tunjab = 15/100 * gapok;
+        let bpjs = 10/100 * gapok;
+        let tunkel = (status=="Menikah") ? 20/100 * gapok : 0;
+        let total = gapok+tunjab+bpjs+tunkel;
+
+
+
+        const nama2 = document.getElementById('nama');
+        const jabatan2 = document.getElementById('jabatan');
+        const status2 = document.getElementById('status');
+        const gapok2 = document.getElementById('gapok');
+        const tunjab2 = document.getElementById('tunjab');
+        const bpjs2 = document.getElementById('bpjs');
+        const tunkel2 = document.getElementById('tunkel');
+        const total2 = document.getElementById('total');
+        const total3 = document.getElementById('total_foot');
+        
+
+        nama2.textContent=nama;
+        jabatan2.textContent=jabatan;
+        status2.textContent=status;
+        gapok2.textContent=gapok;
+        tunjab2.textContent=tunjab;
+        bpjs2.textContent=bpjs;
+        tunkel2.textContent=tunkel;
+        total2.textContent=total;
+        total3.textContent=total;        
+    </script>
+</body>
+</html>
