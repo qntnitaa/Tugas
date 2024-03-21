@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handler</title>
+    <link rel="stylesheet" href="css/tugas1jquery.css">
+</head>
+<body>
+    <h2>Letakkan kursor ke masing-masing kotak</h2>
+    <audio id="cat" src="./sound/cat.mp3"></audio>
+    <audio id="goat" src="./sound/goat.mp3"></audio>
+    <audio id="dog" src="./sound/dog.mp3"></audio>
+
+    <div id="div1">
+        Ini Kucing
+    </div>
+    <div id="div2">
+        Ini Kambing
+    </div>
+    <div id="div3">
+        Ini Anjing
+    </div>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $("document").ready(function(){
+            $("div").mouseout(function(){
+                $(this).css({
+                    "background": "beige",
+                });
+            });
+            $("#div1").mouseover(function(){
+                $(this).css({
+                    "background": "url('https://hips.hearstapps.com/hmg-prod/images/cute-cat-photos-1593441022.jpg?crop=0.670xw:1.00xh;0.167xw,0&resize=640:*')"
+                });
+                $("#cat")[0].play();
+            });
+            $("#div2").mouseover(function(){
+                $(this).css({
+                    background: "url('https://cdn0-production-images-kly.akamaized.net/FqUwYXWXMXmtjr5meuFTo52Dwg0=/500x281/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2760454/original/070845700_1553500439-6._pygmy_-_istock.jpg"
+                });
+                $("#goat")[0].play();
+            });
+            $("#div3").mouseover(function(){
+                $(this).css({
+                    background: "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGlSucYyc6fFFplE3IB-8fp35RVf9EZeoMhg&usqp=CAU')"
+                });
+                $("#dog")[0].play();
+            });
+        });
+    </script>
+</body>
+</html>
